@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
+import {Fab} from '../../index';
 
 export const CounterScreen = () => {
   const [counter, setCounter] = useState<number>(0);
@@ -8,27 +9,21 @@ export const CounterScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Counter: {counter}</Text>
-      <TouchableOpacity
-        style={styles.fabLocationBL}
-        onPress={() => setCounter(counter + 1)}>
-        <View style={styles.fab}>
-          <Text style={styles.fabText}>+1</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.fabLocationBR}
-        onPress={() => setCounter(counter - 1)}>
-        <View style={styles.fab}>
-          <Text style={styles.fabText}>-1</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.fabLocationCenter}
-        onPress={() => setCounter(0)}>
-        <View style={styles.fab}>
-          <Text style={styles.fabText}>restart</Text>
-        </View>
-      </TouchableOpacity>
+      <Fab
+        title="+1"
+        onPress={() => setCounter(counter + 1)}
+        position="fabLocationBL"
+      />
+      <Fab
+        title="-1"
+        onPress={() => setCounter(counter - 1)}
+        position="fabLocationBR"
+      />
+      <Fab
+        title="reset"
+        onPress={() => setCounter(0)}
+        position="fabLocationCenter"
+      />
     </View>
   );
 };
