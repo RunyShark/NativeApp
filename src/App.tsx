@@ -1,6 +1,9 @@
 import React from 'react';
-import {Hello} from './index';
+import {HelloScreen, CounterScreen} from './index';
 
 export const App = () => {
-  return <Hello />;
+  return (
+    // <HelloScreen />
+    <CounterScreen />
+  );
 };
