@@ -8,34 +8,66 @@ export const CounterScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Counter: {counter}</Text>
-      <TouchableOpacity onPress={() => setCounter(counter + 1)}>
-        <Text>1+</Text>
+      <TouchableOpacity
+        style={styles.fabLocationBL}
+        onPress={() => setCounter(counter + 1)}>
+        <View style={styles.fab}>
+          <Text style={styles.fabText}>+1</Text>
+        </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setCounter(counter - 1)}>
-        <Text>1-</Text>
+      <TouchableOpacity
+        style={styles.fabLocationBR}
+        onPress={() => setCounter(counter - 1)}>
+        <View style={styles.fab}>
+          <Text style={styles.fabText}>-1</Text>
+        </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => setCounter(0)}>
-        <Text>restart</Text>
+      <TouchableOpacity
+        style={styles.fabLocationCenter}
+        onPress={() => setCounter(0)}>
+        <View style={styles.fab}>
+          <Text style={styles.fabText}>restart</Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    justifyContent: 'center',
     backgroundColor: '#eaeaea',
   },
   title: {
-    marginTop: 16,
-    paddingVertical: 8,
-    borderWidth: 4,
-    borderColor: '#20232a',
-    borderRadius: 6,
-    backgroundColor: '#61dafb',
-    color: '#20232a',
+    fontSize: 40,
+    top: -15,
     textAlign: 'center',
-    fontSize: 30,
+  },
+  fabLocationBL: {
+    position: 'absolute',
+    bottom: 25,
+    left: 25,
+  },
+  fabLocationBR: {
+    position: 'absolute',
+    bottom: 25,
+    right: 25,
+  },
+  fabLocationCenter: {
+    position: 'absolute',
+  },
+  fab: {
+    backgroundColor: '#61dafb',
+    width: 60,
+    height: 60,
+    borderRadius: 100,
+    justifyContent: 'center',
+  },
+  fabText: {
+    color: 'white',
+    fontSize: 20,
     fontWeight: 'bold',
+    alignSelf: 'center',
   },
 });
