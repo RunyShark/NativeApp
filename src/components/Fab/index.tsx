@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableNativeFeedback,
+  // TouchableOpacity,
+  View,
+} from 'react-native';
 
 type position = 'fabLocationBL' | 'fabLocationBR' | 'fabLocationCenter';
 
@@ -11,11 +17,15 @@ interface FabProps {
 
 export const Fab = ({title, onPress, position}: FabProps) => {
   return (
-    <TouchableOpacity style={styles[position]} onPress={onPress}>
-      <View style={styles.fab}>
-        <Text style={styles.fabText}>{title}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={styles[position]}>
+      <TouchableNativeFeedback
+        onPress={onPress}
+        background={TouchableNativeFeedback.Ripple('#454a4b', false, 30)}>
+        <View style={styles.fab}>
+          <Text style={styles.fabText}>{title}</Text>
+        </View>
+      </TouchableNativeFeedback>
+    </View>
   );
 };
 
@@ -39,6 +49,15 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 100,
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+
+    elevation: 8,
   },
   fabText: {
     color: 'white',
