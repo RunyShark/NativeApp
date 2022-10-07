@@ -1,10 +1,17 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {HelloScreen, CounterScreen, BoxModelScreen} from './index';
+import {SafeAreaView} from 'react-native';
+import {
+  // HelloScreen,
+  // CounterScreen,
+  // BoxModelScreen,
+  DimensionScreen,
+} from './index';
 
 export const App = () => {
   return (
-    // <HelloScreen />
-    // <CounterScreen />
-    <BoxModelScreen />
+    <SafeAreaView style={{flex: 1}}>
+      <DimensionScreen />
+    </SafeAreaView>
   );
 };
