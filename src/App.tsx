@@ -7,13 +7,14 @@ import {
   // BoxModelScreen,
   // DimensionScreen,
   // PositionRelativeScreen,
-  FlexBoxScreen,
+  // FlexBoxScreen,
+  FlexBoxDirectionScreen,
 } from './index';
 
 export const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <FlexBoxScreen />
+      <FlexBoxDirectionScreen />
     </SafeAreaView>
   );
 };
