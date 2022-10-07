@@ -3,3 +3,4 @@ export * from './Counter';
 export * from './BoxObjModel';
 export * from './Dimensioned';
 export * from './PositionRelative';
+export * from './Flex';
