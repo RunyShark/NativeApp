@@ -5,13 +5,14 @@ import {
   // HelloScreen,
   // CounterScreen,
   // BoxModelScreen,
-  DimensionScreen,
+  // DimensionScreen,
+  PositionRelativeScreen,
 } from './index';
 
 export const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <DimensionScreen />
+      <PositionRelativeScreen />
     </SafeAreaView>
   );
 };
